@@ -1,0 +1,43 @@
+First and Second largest numbers in array
+
+package Arrays;
+
+public class FirstAndSecondLargestNumber {
+
+	public static void main(String[] args) {
+	 
+		int Age[]= {2,5,6,9,10};
+		java.util.Arrays.sort(Age);  //Sorting Process
+		System.out.println("The sorting numbers should be :"+java.util.Arrays.toString(Age));  //Sorting
+		System.out.println();
+		
+		for(int i=0;i<Age.length;i++) {            //Find the Length of the Array 
+			System.out.println("Age"+" + " +i+ " : "+Age[i]);     
+			
+		}
+		
+		System.out.println();
+		int max1=Integer.MIN_VALUE;      // Finding largest number so use MIN_VALUE
+		int max2=Integer.MIN_VALUE;
+		
+		for(int num:Age) {  //(int num:Age)->it is Enhanced for loop this means there is no need index(i)
+			
+			//(Int num)-> will store the temporary variable, 
+			       //(:Age) -> it will say the each value of Age
+			
+			
+			if(num>max1) {       //Largest number so use Greater than Symbol ( max1-> holds the largest number) 
+				max2=max1;             //Before we update ,we save the current max1 into max2 -> it becomes the old largest number into 
+				                       //New Second largest number
+				max1=num; // update (max1) value with (num) the new largest 
+				
+			}
+			else if(num>max2 && num!=max1) {
+				max2=num;
+			}
+			
+		}
+		System.out.println("The First largest number :" +max1);
+		System.out.println("The Second largest number :" +max2);
+}
+}
